@@ -1,0 +1,29 @@
+{
+  "name": "gql-server",
+  "version": "0.0.0",
+  "description": "my cool project",
+  "repository": {
+    "url": "zcong1993/gql-server",
+    "type": "git"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo no test!",
+    "lint": "tslint -p .",
+    "build": "tsc"
+  },
+  "typings": "./typings/index.d.ts",
+  "author": "zcong1993 <1005997919@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.4.2",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.2.1",
+    "apollo-server": "^2.3.1",
+    "apollo-server-cache-redis": "^0.2.1",
+    "graphql": "^14.0.2"
+  }
+}
