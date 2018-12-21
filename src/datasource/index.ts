@@ -1,29 +1,24 @@
-import { RESTDataSource } from 'apollo-datasource-rest'
+import { RESTDataSourcePlus } from '@zcong/apollo-datasource-rest-plus'
 
-export class BooksDatasource extends RESTDataSource {
-  private cacheOpts: any
-
+export class BooksDatasource extends RESTDataSourcePlus {
   constructor() {
     super()
     this.baseURL = 'http://localhost:8080/v1/'
-    this.cacheOpts = {
-      ttl: 3600
-    }
   }
 
   async getBooks(limit: number, offset: number) {
     return this.get('books', {
       limit,
       offset
-    }, this.cacheOpts)
+    })
   }
 
-  async getBook(id: string) {
-    return this.get(`books/${id}`, null, this.cacheOpts)
+  async getBook(id: number) {
+    return this.get(`books/${id}`)
   }
 }
 
-export class UserDatasource extends RESTDataSource {
+export class UserDatasource extends RESTDataSourcePlus {
   private cacheOpts: any
 
   constructor() {
@@ -36,5 +31,16 @@ export class UserDatasource extends RESTDataSource {
 
   async getUser(id: string) {
     return this.get(`users/${id}`, null, this.cacheOpts)
+  }
+}
+
+export class MeDatasource extends RESTDataSourcePlus {
+  constructor() {
+    super()
+    this.baseURL = 'http://localhost:8080/v1/'
+  }
+
+  async me() {
+    return this.get(`me`)
   }
 }
