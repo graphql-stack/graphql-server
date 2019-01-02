@@ -174,10 +174,10 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@zcong/apollo-datasource-rest-plus@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@zcong/apollo-datasource-rest-plus/-/apollo-datasource-rest-plus-0.1.3.tgz#dacbee9c59016699e9ee9c558b0bfbd6539bad94"
-  integrity sha512-XOtEaxtSH82QtZp+Cj7pqzEbPyEodFMpMtUh+f70n+pdH3UyKbaFlxiI6MIG5N2PDKcrJB3QMsSLWCOL/1rwbQ==
+"@zcong/apollo-datasource-rest-plus@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@zcong/apollo-datasource-rest-plus/-/apollo-datasource-rest-plus-0.2.4.tgz#c32df80a55a52fc5d40e8b896d4912b576706e86"
+  integrity sha512-LbKJxBmVeXFET1N01E4Mp6DKREF8sYR+8pxbZguQf9m7/MXZZr8SuTOY7oaBdtWTBKv5BCGdVCYXsZ21ITzm4A==
   dependencies:
     apollo-datasource-rest "^0.2.1"
     apollo-server-env "^2.2.0"
@@ -1081,6 +1081,11 @@ path-to-regexp@0.1.7:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
+prettier@^1.15.3:
+  version "1.15.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
+  integrity sha512-gAU9AGAPMaKb3NNSUUuhhFAS7SCO4ALTN4nRIn6PJ075Qd28Yn2Ig2ahEJWdJwJmlEBTUfC7mMUSFy8MwsOCfg==
+
 protobufjs@^6.8.6:
   version "6.8.8"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.8.8.tgz#c8b4f1282fd7a90e6f5b109ed11c84af82908e7c"
@@ -1306,6 +1311,11 @@ tslint-config-airbnb@^5.4.2:
     tslint-consistent-codestyle "^1.14.1"
     tslint-eslint-rules "^5.4.0"
     tslint-microsoft-contrib "~5.2.1"
+
+tslint-config-prettier@^1.17.0:
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.17.0.tgz#946ed6117f98f3659a65848279156d87628c33dc"
+  integrity sha512-NKWNkThwqE4Snn4Cm6SZB7lV5RMDDFsBwz6fWUkTxOKGjMx8ycOHnjIbhn7dZd5XmssW3CwqUjlANR6EhP9YQw==
 
 tslint-consistent-codestyle@^1.14.1:
   version "1.14.1"

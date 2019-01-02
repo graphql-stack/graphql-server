@@ -1,6 +1,7 @@
 import { ApolloServer, gql } from 'apollo-server'
 import { RedisCache } from 'apollo-server-cache-redis'
-import { BooksDatasource, UserDatasource, MeDatasource } from './datasource'
+import { ReadonlyDataSource } from '@zcong/apollo-datasource-rest-plus'
+import { UserDatasource, MeDatasource } from './datasource'
 
 const typeDefs = gql`
   # Comments in GraphQL are defined with the hash (#) symbol.
@@ -32,15 +33,19 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    books: async (_source: any, { limit, offset }: any, { dataSources, token }: any) => {
-      return dataSources.booksApi.getBooks(limit, offset)
+    books: async (
+      _source: any,
+      { limit, offset }: any,
+      { dataSources }: any
+    ) => {
+      return dataSources.booksApi.list(limit, offset)
     },
-    getBook: async (_source: any, { id }: any, { dataSources, token }: any) => {
-      return dataSources.booksApi.getBook(id)
+    getBook: async (_source: any, { id }: any, { dataSources }: any) => {
+      return dataSources.booksApi.retrieve(id)
     },
     me: async (_source: any, args: any, { dataSources }: any) => {
       return dataSources.meApi.me()
-    },
+    }
   },
   Book: {
     author: async (_source: any, args: any, { dataSources }: any) => {
@@ -56,7 +61,7 @@ const server = new ApolloServer({
     host: 'localhost'
   }),
   dataSources: () => ({
-    booksApi: new BooksDatasource(),
+    booksApi: new ReadonlyDataSource('http://localhost:8080/v1/', 'books'),
     usersApi: new UserDatasource(),
     meApi: new MeDatasource()
   }),
@@ -68,5 +73,5 @@ const server = new ApolloServer({
 })
 
 server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+  console.log(`🚀  Server ready at ${url}`)
 })
