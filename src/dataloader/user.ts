@@ -1,4 +1,4 @@
-import * as Dataloader from 'dataloader'
+import Dataloader from 'dataloader'
 import axios from 'axios'
 
 const getUsers = (ids: any[]): Promise<any[]> => {

@@ -17,6 +17,7 @@
   "author": "zcong1993 <1005997919@qq.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/graphql": "^14.0.4",
     "prettier": "^1.15.3",
     "tslint": "^5.8.0",
     "tslint-config-airbnb": "^5.4.2",
@@ -24,7 +25,7 @@
     "typescript": "^2.6.2"
   },
   "dependencies": {
-    "@zcong/apollo-datasource-rest-plus": "^0.2.4",
+    "@zcong/apollo-datasource-rest-plus": "^0.3.4",
     "apollo-datasource-rest": "^0.2.1",
     "apollo-server": "^2.3.1",
     "apollo-server-cache-redis": "^0.2.1",
